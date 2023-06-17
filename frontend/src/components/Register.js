@@ -32,7 +32,7 @@ function Register({
       title="Регистрация"
       buttonText="Зарегистрироваться"
       linkTitle="Уже зарегистрированы? Войти"
-      linkPath="/sign-in"
+      linkPath="/signin"
       onSubmit={handleSubmit}
     >
       <label className="input-label">

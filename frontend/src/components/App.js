@@ -66,7 +66,8 @@ function App() {
   function handleAddPlaceSubmit({ name, link }) {
     api.postCard({ name, link })
       .then((newCard) => {
-        setCards([newCard, ...cards]);
+        setCards([...cards, newCard]);
+        // setCards([newCard, ...cards]);
         closeAllPopups();
       })
       .catch((err) => {
@@ -91,7 +92,8 @@ function App() {
   }
 
   function handleCardLike(card) {
-    const isLiked = card.likes.some(i => i._id === currentUser._id);
+    const isLiked = card.likes.some(i => i === currentUser._id);
+    // const isLiked = card.likes.some(i => i._id === currentUser._id);
     api.likeCard(card._id, isLiked)
       .then((newCard) => {
         setCards((state) =>
@@ -119,6 +121,7 @@ function App() {
       .then((jsonResponse) => {
         if (jsonResponse.token) {
           setFormValue({ email: '', password: '' });
+          api.setToken(jsonResponse.token);
           setIsLoggedIn(true);
           setEmail(email);
           navigate("/", { replace: true });
@@ -146,7 +149,7 @@ function App() {
           'Вы успешно зарегистрировались!'
         );
         setInfoTooltipState(true);
-        navigate('/sign-in', { replace: true })
+        navigate('/signin', { replace: true })
       })
       .catch((err) => {
         handleTooltipData(
@@ -160,9 +163,10 @@ function App() {
 
   function handleSignOut() {
     localStorage.removeItem('jwt');
+    api.setToken('');
     setIsLoggedIn(false);
     setEmail('');
-    navigate('/sign-in', { replace: true });
+    navigate('/signin', { replace: true });
   }
 
   function handleTokenCheck() {
@@ -170,8 +174,10 @@ function App() {
     if (jwt) {
       auth.checkToken(jwt)
         .then((jsonResponse) => {
-          const email = jsonResponse.data.email;
+          const email = jsonResponse.email;
+          // const email = jsonResponse.data.email;
           setEmail(email);
+          api.setToken(jwt);
           setIsLoggedIn(true);
           navigate("/", { replace: true });
         })
@@ -250,14 +256,14 @@ function App() {
             }
           />
           <Route
-            path="/sign-in"
+            path="/signin"
             element={
               <Login
                 handleLogin={handleLogin}
               />}
           />
           <Route
-            path="/sign-up"
+            path="/signup"
             element={
               <Register
                 handleRegister={handleRegister}

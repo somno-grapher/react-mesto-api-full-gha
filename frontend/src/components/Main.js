@@ -41,7 +41,8 @@ function Main({
       </section>
       <section className="photo-grid">
         <ul className="photo-grid__list">
-          {cards.map((card) => {
+          {cards.slice(0).reverse().map((card) => {
+          // {cards.map((card) => {
             return (
               <Card
                 key={card._id}

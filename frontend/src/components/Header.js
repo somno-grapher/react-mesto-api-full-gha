@@ -18,21 +18,21 @@ function Header({
       <div className="header__pivot">
         <Routes>
           <Route
-            path="/sign-in"
+            path="/signin"
             element={
               <Link
                 className="header__entry-link"
-                to="/sign-up"
+                to="/signup"
               >
                 Регистрация
               </Link>}
           />
           <Route
-            path="/sign-up"
+            path="/signup"
             element={
               <Link
                 className="header__entry-link"
-                to="/sign-in"
+                to="/signin"
               >
                 Войти
               </Link>}
@@ -52,7 +52,7 @@ function Header({
                 </p>
                 <Link
                   className="header__sign-out-link"
-                  to="/sign-in"
+                  to="/signin"
                   onClick={onSignOut}
                 >
                   Выйти

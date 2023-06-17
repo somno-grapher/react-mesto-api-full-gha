@@ -1,4 +1,5 @@
-export const basePath = 'https://auth.nomoreparties.co';
+export const basePath = 'http://localhost:3000';
+// export const basePath = 'https://auth.nomoreparties.co';
 // ! alternative server
 // export const basePath = 'http://104.131.160.75:3000';
 
