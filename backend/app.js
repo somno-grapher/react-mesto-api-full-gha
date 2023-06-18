@@ -2,6 +2,7 @@ const express = require('express');
 const mongoose = require('mongoose');
 const helmet = require('helmet');
 const { errors } = require('celebrate');
+const cors = require('cors');
 
 const { PORT, DB_URL } = require('./config');
 const router = require('./routes');
@@ -15,6 +16,8 @@ app.use(express.json());
 app.use(helmet());
 
 app.use(requestLogger);
+
+app.use(cors());
 
 app.use(router);
 
