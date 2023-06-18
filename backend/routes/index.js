@@ -7,6 +7,13 @@ const auth = require('../middlewares/auth');
 const { validateUserBody } = require('../middlewares/validate');
 const NotFoundError = require('../errors/NotFoundError');
 
+// TODO: exclude after review
+router.get('/crash-test', () => {
+  setTimeout(() => {
+    throw new Error('Сервер сейчас упадёт');
+  }, 0);
+});
+
 router.use('/signup', validateUserBody, usersController.createUser);
 router.use('/signin', validateUserBody, usersController.login);
 
