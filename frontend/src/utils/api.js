@@ -114,7 +114,8 @@ class Api {
 }
 
 const api = new Api(
-  'http://localhost:3000',
+  'http://mestobackend.nomoredomains.rocks',
+  // 'http://158.160.6.37:3000',
   ''
 );
 
