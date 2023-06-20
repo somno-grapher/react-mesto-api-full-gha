@@ -67,7 +67,6 @@ function App() {
     api.postCard({ name, link })
       .then((newCard) => {
         setCards([...cards, newCard]);
-        // setCards([newCard, ...cards]);
         closeAllPopups();
       })
       .catch((err) => {
@@ -93,7 +92,6 @@ function App() {
 
   function handleCardLike(card) {
     const isLiked = card.likes.some(i => i === currentUser._id);
-    // const isLiked = card.likes.some(i => i._id === currentUser._id);
     api.likeCard(card._id, isLiked)
       .then((newCard) => {
         setCards((state) =>

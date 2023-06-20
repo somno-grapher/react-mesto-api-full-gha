@@ -115,18 +115,7 @@ class Api {
 
 const api = new Api(
   'https://mestobackend.nomoredomains.rocks',
-  // 'http://158.160.6.37:3000',
   ''
 );
-
-// const api = new Api(
-//   'http://localhost:3000',
-//   'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDdiNzlhYjM0ZjQxZTg5ZmRiYWE3MzAiLCJpYXQiOjE2ODU4MTQ2MzF9.5kkUEPy7bNMNpVDUrL0d7TuctnwW_IZJkiHKbI7s7uk'
-// );
-
-// const api = new Api(
-//   'https://mesto.nomoreparties.co/v1/cohort-61',
-//   '77f77b05-b295-4c6a-bc0b-34525fb16730'
-// );
 
 export default api;

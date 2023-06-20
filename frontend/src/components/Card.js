@@ -25,14 +25,12 @@ function Card({
 
   const currentUser = useContext(CurrentUserContext);
   const isLiked = card.likes.some(i => i === currentUser._id);
-  // const isLiked = card.likes.some(i => i._id === currentUser._id);
 
   const cardLikeButtonClassName =
     `like-button
     card__like-button
     ${isLiked && 'like-button_liked'}`;
   const isOwn = card.owner === currentUser._id;
-  // const isOwn = card.owner._id === currentUser._id;
 
   return (
     <li className="card">

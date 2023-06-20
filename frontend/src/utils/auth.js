@@ -1,8 +1,4 @@
 export const basePath = 'https://mestobackend.nomoredomains.rocks';
-// export const basePath = 'http://158.160.6.37:3000';
-// export const basePath = 'https://auth.nomoreparties.co';
-// ! alternative server
-// export const basePath = 'http://104.131.160.75:3000';
 
 function getJsonPromise(res) {
   if (res.ok) {
