@@ -114,7 +114,7 @@ class Api {
 }
 
 const api = new Api(
-  'http://mestobackend.nomoredomains.rocks',
+  'https://mestobackend.nomoredomains.rocks',
   // 'http://158.160.6.37:3000',
   ''
 );

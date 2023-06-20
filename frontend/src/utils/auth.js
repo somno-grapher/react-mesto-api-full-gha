@@ -1,4 +1,4 @@
-export const basePath = 'http://mestobackend.nomoredomains.rocks';
+export const basePath = 'https://mestobackend.nomoredomains.rocks';
 // export const basePath = 'http://158.160.6.37:3000';
 // export const basePath = 'https://auth.nomoreparties.co';
 // ! alternative server
